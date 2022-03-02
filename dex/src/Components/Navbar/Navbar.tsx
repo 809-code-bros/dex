@@ -6,7 +6,7 @@ import "./Navbar.scss";
 const Navbar = () => {
   return (
     <>
-      <div className="navbar">
+      <Col className="navbar">
         <h1 className="header">DEX</h1>
 
         <div>
@@ -16,7 +16,7 @@ const Navbar = () => {
             Login / Sign Up
           </Button>
         </div>
-      </div>
+      </Col>
     </>
   );
 };
