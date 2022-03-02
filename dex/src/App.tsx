@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import logo from './assets/rxjs.svg'
-import './App.css'
+import './App.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from './Components/Navbar'
 

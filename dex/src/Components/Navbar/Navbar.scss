@@ -1,0 +1,23 @@
+.navbar {
+  height: 110px;
+  margin-left: 40px;
+
+  .header {
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 90px;
+    width: 120px;
+
+    background: linear-gradient(
+      178.55deg,
+      #00b3de 1.24%,
+      rgba(4, 0, 222, 0.744792) 76.46%,
+      rgba(0, 179, 222, 0) 98.77%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

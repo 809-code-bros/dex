@@ -1,11 +1,24 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Col } from "react-bootstrap";
+import Button from "../Button";
+import "./Navbar.scss";
+
 const Navbar = () => {
   return (
     <>
-    <span className='navbar'>
-        
-    </span>
-    </>
-  )
-}
+      <Col className="navbar">
+        <h1 className="header">DEX</h1>
 
-export default Navbar
+        <div>
+          <Button position="nav-button">Most Popular</Button>
+          <Button position="nav-button">Post Art</Button>
+          <Button position="nav-button" background="login">
+            Login / Sign Up
+          </Button>
+        </div>
+      </Col>
+    </>
+  );
+};
+
+export default Navbar;
