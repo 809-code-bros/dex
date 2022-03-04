@@ -3,19 +3,24 @@ import { Col } from "react-bootstrap";
 import Button from "../Button";
 import "./Navbar.scss";
 
+const NavButtons = () => {
+  return (
+    <div>
+      <Button position="nav-button">Most Popular</Button>
+      <Button position="nav-button">Post Art</Button>
+      <Button position="nav-button" background="login">
+        Login / Sign Up
+      </Button>
+    </div>
+  );
+};
+
 const Navbar = () => {
   return (
     <>
       <Col className="navbar">
         <h1 className="header mb-0">DEX</h1>
-
-        <div>
-          <Button position="nav-button">Most Popular</Button>
-          <Button position="nav-button">Post Art</Button>
-          <Button position="nav-button" background="login">
-            Login / Sign Up
-          </Button>
-        </div>
+        <NavButtons />
       </Col>
     </>
   );
