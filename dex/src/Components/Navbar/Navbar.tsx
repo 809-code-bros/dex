@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <>
       <Col className="navbar">
-        <h1 className="header">DEX</h1>
+        <h1 className="header mb-0">DEX</h1>
 
         <div>
           <Button position="nav-button">Most Popular</Button>
