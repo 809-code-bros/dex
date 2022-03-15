@@ -12,7 +12,7 @@ const Navbar = () => {
         <div>
           <Button position="nav-button">Most Popular</Button>
           <Button position="nav-button">Post Art</Button>
-          <Button position="nav-button" background="login">
+          <Button position="nav-button" background="login"> 
             Login / Sign Up
           </Button>
         </div>
