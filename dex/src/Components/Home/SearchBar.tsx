@@ -1,6 +1,5 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Icon } from '@iconify/react';
 
 import "./SearchBar.scss"
 const SearchBar = () => {

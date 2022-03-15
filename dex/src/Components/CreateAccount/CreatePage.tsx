@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Prev } from "react-bootstrap/esm/PageItem";
 import { useNavigate } from "react-router-dom";
 
 import "./CreatePage.scss";
@@ -43,7 +42,6 @@ export const CreatePage = () => {
       body: JSON.stringify(newPerson),
     }).catch((error) => {
       window.alert(error);
-      return;
     });
 
     setForm({
@@ -114,74 +112,4 @@ export const CreatePage = () => {
   );
 };
 
-// const CreatePage = () => {
-
-//   const[firstName, setfirstName] = useState('')
-
-//  const [lastName, setlastName] = useState('')
-
-//  const [email, setEmail] = useState('')
-
-//  const [username, setuserName] = useState('')
-
-//  const [password, setPassword] = useState('')
-
-//   return (
-//     <div className='create-window d-flex'>
-
-//             <h1>Share your art with the World</h1>
-//             <form className='forms'>
-//                 <input
-//                 type="text"
-//                 placeholder='First Name'
-//                 name="first name"
-//                 value= {firstName}
-//                 onChange={(e) => setfirstName(e.target.value)}
-
-//                 />
-
-//                 <input
-//                 type="text"
-//                 placeholder='Last Name'
-//                 name="last name"
-//                 value= {lastName}
-//                 onChange={(e) => setlastName(e.target.value)}
-
-//                 />
-
-//                 <input
-//                 type="text"
-//                 placeholder='Email'
-//                 name="email"
-//                 value= {email}
-//                 onChange={(e) => setEmail(e.target.value)}
-
-//                 />
-
-//                 <input
-//                 type="text"
-//                 placeholder='Username'
-//                 name="username"
-//                 value= {username}
-//                 onChange={(e) => setuserName(e.target.value)}
-
-//                  />
-
-//                 <input
-//                  type="password"
-//                  placeholder='Password'
-//                  name="password"
-//                  value= {password}
-//                  onChange={(e) => setPassword(e.target.value)}
-
-//                  />
-
-//                 <button type="submit" className='py-2 px-5 mt-4'>Create Account</button>
-
-//             </form>
-
-//     </div>
-//   )
-// }
-
-// export default CreatePage
+export default CreatePage;
