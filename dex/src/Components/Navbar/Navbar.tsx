@@ -1,9 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
 import { Col } from "react-bootstrap";
 import Button from "../Button";
 import "./Navbar.scss";
 
-const NavButtons = () => {
+const NavButtons: React.FC = () => {
   return (
     <div>
       <Button position="nav-button">Most Popular</Button>
@@ -15,7 +16,7 @@ const NavButtons = () => {
   );
 };
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
     <>
       <Col className="navbar">
