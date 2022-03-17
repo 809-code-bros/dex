@@ -3,7 +3,7 @@ import "./Home.scss";
 import SearchBar from "./SearchBar";
 import About from "./About/About";
 
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-reveal";
 import { Icon } from '@iconify/react';
 
 
