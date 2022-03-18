@@ -2,16 +2,28 @@ import { useState } from 'react'
 import logo from './assets/rxjs.svg'
 import './App.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Route, Routes} from "react-router-dom"
 
+import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar'
-
+import { CreatePage } from './Components/CreateAccount/CreatePage';
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
       <Navbar />
-      <header className="App-header">
+      {/* <CreatePage /> */}
+
+      <Routes>
+          <Route path ="/" element={<Home />}/>
+          <Route path = "/CreateAccount" element= {<CreatePage />}/>
+          <Route />
+          <Route />
+      </Routes>
+
+
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
         <p>
@@ -42,7 +54,7 @@ function App() {
             Vite Docs
           </a>
         </p>
-      </header>
+      </header> */}
     </div>
   )
 }

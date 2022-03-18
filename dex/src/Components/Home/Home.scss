@@ -1,0 +1,65 @@
+.HomePg {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    178.72deg,
+    #00b3de 11.43%,
+    rgba(0, 87, 248, 0.322917) 99.28%,
+    rgba(28, 48, 220, 0) 101.63%
+  );
+}
+
+.frontArt {
+  position: absolute;
+  width: 100%;
+  height: 153px;
+  left: 40px;
+  top: 290px;
+  h1 {
+    font-family: "Roboto" , sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    font-size: 86px;
+    line-height: 112px;
+    letter-spacing: 100px;
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #ffffff 40.1%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+
+.about-start { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    height:100px;
+
+    h1{ 
+        font-family: "Poppins" , sans-serif;
+        color:white;
+        font-size: 1.9rem;
+  
+    }
+
+
+    
+}
+
+.icon-downArrow { 
+    font-size: 40px;
+    color: white;
+    
+}
+
