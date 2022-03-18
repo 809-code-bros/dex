@@ -1,6 +1,7 @@
 const express = require("express");
 
 const app = express();
+app.disable("x-powered-by");
 const cors = require("cors");
 
 require("dotenv").config({ path: "./config.env" });
