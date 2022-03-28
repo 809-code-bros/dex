@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import  Axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./CreatePage.scss"
 
-import "./CreatePage.scss";
+
+
 
 interface IUser {
   firstName?: string;
@@ -28,37 +31,17 @@ export const CreatePage = () => {
     });
   };
 
-  const onSubmit = async (e: any) => {
-    e.prevenDefault();
-
-    const newPerson = { ...form };
-
-    await fetch("http://localhost:5000/record/add", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-
-      body: JSON.stringify(newPerson),
-    }).catch((error) => {
-      window.alert(error);
-    });
-
-    setForm({
-      firstName: "",
-      lastName: "",
-      email: "",
-      username: "",
-      password: "",
-    });
-    navigate("/");
+  const addToList = () => {
+    Axios.post("http://localhost:4000/register", { 
+      form:form
+    }).catch(err=>console.log())
   };
 
   return (
     <div className="create-window d-flex">
       <h1>Share your art with the World</h1>
-      
-      <form onSubmit={onSubmit} className='forms'>
+
+      <form className="forms">
         <div>
           <input
             type="text"
@@ -81,7 +64,7 @@ export const CreatePage = () => {
         <div>
           <input
             type="text"
-            placeholder="Email"   
+            placeholder="Email"
             id="email"
             value={form.email}
             onChange={(e) => formUpdate({ email: e.target.value })}
@@ -105,9 +88,11 @@ export const CreatePage = () => {
             onChange={(e) => formUpdate({ password: e.target.value })}
           />
         </div>
-         <button type="submit" className='py-2 px-5 mt-2'>Create Account</button>
-
+       
       </form>
+      <button onClick={()=>addToList} className="py-2 px-5 mt-2">
+          Create Account
+        </button>
     </div>
   );
 };

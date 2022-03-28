@@ -1,0 +1,65 @@
+.PostPage-window {
+  height: 1008px;
+  width: 1920px;
+  background: linear-gradient(
+      0deg,
+      rgba(173, 173, 173, 0.2),
+      rgba(173, 173, 173, 0.2)
+    ),
+    linear-gradient(
+      90deg,
+      rgba(212, 211, 255, 0.744792) 36.04%,
+      rgba(130, 128, 239, 0.371864) 101.35%,
+      rgba(255, 255, 255, 0) 101.46%,
+      rgba(120, 118, 237, 0.401273) 101.46%
+    );
+}
+
+.userPost-text {
+  height: 273px;
+  width: 399px;
+  margin-top: 120px;
+  flex-direction: row;
+
+  h1 {
+    width: 300px;
+    text-align: left;
+    margin-left: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+  }
+}
+
+.post-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 16px;
+  position: absolute;
+  width: 400px;
+  height: 52px;
+  left: -14px;
+  top: 360px;
+
+  button {
+    margin-left: 48px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-size: 18px;
+    background: linear-gradient(180deg, #00b3de 0%, rgba(0, 231, 245, 0) 100%),
+      #8e1dff;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+}
+
+.photo-insert{ 
+width: 500px;
+height: 640px;
+margin-top: 120px;
+background-color: white;
+margin-left:400px;
+}

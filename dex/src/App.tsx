@@ -7,20 +7,22 @@ import {Route, Routes} from "react-router-dom"
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar'
 import { CreatePage } from './Components/CreateAccount/CreatePage';
+import PostPage from './Components/PostArt/PostPage';
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
       <Navbar />
-      {/* <CreatePage /> */}
+      <CreatePage />
 
-      <Routes>
+      {/* <Routes>
           <Route path ="/" element={<Home />}/>
           <Route path = "/CreateAccount" element= {<CreatePage />}/>
+          <Route path = "/PostPage" element={<PostPage />}/>
           <Route />
-          <Route />
-      </Routes>
+      </Routes> */}
 
 
       {/* <header className="App-header">
