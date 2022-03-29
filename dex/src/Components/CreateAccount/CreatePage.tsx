@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import  Axios from "axios";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./CreatePage.scss"
-
-
-
+import "./CreatePage.scss";
 
 interface IUser {
   firstName?: string;
@@ -25,23 +22,26 @@ export const CreatePage = () => {
 
   const navigate = useNavigate();
 
-  const formUpdate = (value: IUser) => {
+  const formUpdate = (value: Partial<IUser>) => {
     return setForm((prev) => {
       return { ...prev, ...value };
     });
   };
 
-  const addToList = () => {
-    Axios.post("http://localhost:4000/register", { 
-      form:form
-    }).catch(err=>console.log())
+  const addToList = (e: any) => {
+  e.preventDefault();
+    axios
+      .post("http://localhost:4000/register", {
+        form: form,
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
     <div className="create-window d-flex">
       <h1>Share your art with the World</h1>
 
-      <form className="forms">
+      <form className="forms" onSubmit={addToList}>
         <div>
           <input
             type="text"
@@ -88,11 +88,8 @@ export const CreatePage = () => {
             onChange={(e) => formUpdate({ password: e.target.value })}
           />
         </div>
-       
+        <button className="py-2 px-5 mt-2">Create Account</button>
       </form>
-      <button onClick={()=>addToList} className="py-2 px-5 mt-2">
-          Create Account
-        </button>
     </div>
   );
 };

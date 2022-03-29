@@ -15,14 +15,13 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <CreatePage />
 
-      {/* <Routes>
+      <Routes>
           <Route path ="/" element={<Home />}/>
           <Route path = "/CreateAccount" element= {<CreatePage />}/>
           <Route path = "/PostPage" element={<PostPage />}/>
           <Route />
-      </Routes> */}
+      </Routes>
 
 
       {/* <header className="App-header">
