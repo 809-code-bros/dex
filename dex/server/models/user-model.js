@@ -10,5 +10,11 @@ const UserSchema = new Schema({
   entryDate: { type: Date, default: Date.now },
 });
 
+UserSchema.pre('save', function(next){ 
+  if(!this.isModified('password'))
+  return next(); 
+  bcrypt.hash()
+})
+
 const UsersModel = mongoose.model("users", UserSchema);
 module.exports = UsersModel;

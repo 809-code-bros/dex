@@ -9,7 +9,7 @@ const PostPage = () => {
       <div className="post-buttons">
         <button>Create</button>
         <button>Upload Image</button>
-        
+        ;
       </div>
       <div className="photo-insert">
           

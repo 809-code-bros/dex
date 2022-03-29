@@ -29,7 +29,7 @@ export const CreatePage = () => {
   };
 
   const addToList = (e: any) => {
-  e.preventDefault();
+    e.preventDefault();
     axios
       .post("http://localhost:4000/register", {
         form: form,
