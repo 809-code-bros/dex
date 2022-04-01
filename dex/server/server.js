@@ -4,7 +4,7 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const UsersModel = require("./models/user-model");
-
+const ImagesModel = require("./models/images-model");
 require("dotenv/config");
 
 // app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,7 +14,10 @@ app.use(cors());
 
 // DB Connection
 mongoose
-  .connect(process.env.DB_URI)
+  .connect(process.env.DB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
 
   .then(() => {
     console.log("DB Connected!");
@@ -72,18 +75,39 @@ app.get("/user-profile", async (req, res) => {
     res.send(result);
   });
 });
-// const multer = require("multer");
 
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, "uploads");
-//   },
-//   filename: (req, file, cb) => {
-//     cb(null, file.fieldname + "-" + Date.now());
-//   },
-// });
+//Image uploading
+app.get("/", (req, res) => {
+  ImagesModel.find({}, (err, items) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("An error occurred", err);
+    } else {
+      res.render("imagesPage", { items: items });
+    }
+  });
+});
 
-// const upload = multer({ storage: storage });
+app.post("/", upload.single("image"), (req, res, next) => {
+  var obj = {
+    name: req.body.name,
+    desc: req.body.desc,
+    img: {
+      data: fs.readFileSync(
+        path.join(__dirname + "/uploads/" + req.file.filename)
+      ),
+      contentType: "image/png",
+    },
+  };
+  ImagesModel.create(obj, (err, item) => {
+    if (err) {
+      console.log(err);
+    } else {
+      // item.save();
+      res.redirect("/");
+    }
+  });
+});
 
 // app.get("/posts", (req, res) => {
 //   imgModel.find({}, (err, items) => {
