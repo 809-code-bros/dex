@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.scss";
+import BoysPic from "../../../Pictures/boys.jpg"
 const About = () => {
   return (
     <div className="about-section">
@@ -11,6 +12,20 @@ const About = () => {
           to upload your own images you’ve taken or drawn. Below we have the
           three latest photos that have been posted on the DEX app.
         </h3>
+      </div>
+
+      <div className="show-case">
+
+        <div className="show-case1">
+        <img src={BoysPic} alt="boyspic" />
+
+        </div>
+        <div className="show-case2">
+
+        </div>
+        <div className="show-case3">
+        </div>
+
       </div>
     </div>
   );
