@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
-// const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const UsersModel = require("./models/user-model");
-const ImagesModel = require("./models/images-model");
 require("dotenv/config");
+
 
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
@@ -36,6 +36,9 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 */
+
+
+
 
 const PORT = process.env.PORT || 4000; // backend routing port
 app.listen(PORT, () => {
@@ -77,58 +80,7 @@ app.get("/user-profile", async (req, res) => {
 });
 
 
-// app.post("/upload", (req,res)=> { 
-//   const { title, desc } = req.body.createArt; 
-
-//   const newArt =  new ImagesModel({ 
-//     title,
-//     desc, 
-//     img: {
-//       data: fs.readFileSync(
-//         path.join(__dirname + "/uploads/" + req.file.filename)
-//       ),
-//       contentType: "jpeg",
-//     },
-//   });
-//   console.log("Art created!", newArt);
-//   newArt.save().catch((err)=> console.log(err.message));
-//   res.status(200).json({ msg: newArt });
-  
-// })
 
 
 
 
-
-//Image uploading
-// app.get("/", (req, res) => {
-//   ImagesModel.find({}, (err, items) => {
-//     if (err) {
-//       console.log(err);
-//       res.status(500).send("An error occurred", err);
-//     } else {
-//       res.render("imagesPage", { items: items });
-//     }
-//   });
-// });
-
-// app.post("/create", upload.single("image"), (req, res, next) => {
-//   var obj = {
-//     name: req.body.name,
-//     desc: req.body.desc,
-//     img: {
-//       data: fs.readFileSync(
-//         path.join(__dirname + "/uploads/" + req.file.filename)
-//       ),
-//       contentType: "image/png",
-//     },
-//   };
-//   ImagesModel.create(obj, (err, item) => {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       // item.save();
-//       res.redirect("/");
-//     }
-//   });
-// });

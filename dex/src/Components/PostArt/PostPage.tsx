@@ -25,7 +25,7 @@ const PostPage = () => {
   const artList = (e:any) => { 
     e.preventDefault(); 
     axios
-    .post("http://localhost:4000/upload", { 
+    .post("http://localhost:4000/", { 
       createArt:createArt
     })
     .catch((err) => console.log(err));
