@@ -29,7 +29,7 @@ mongoose
     console.log(err);
   });
 
-/*
+
 if (process.env.NODE_ENV === 'production') {
     // Serve any static files
     app.use(express.static(path.join(__dirname, 'frontend/build')));
@@ -38,7 +38,6 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.join(__dirname, 'frontend/build', routesHandler));
     });
 }
-*/
 
 
 

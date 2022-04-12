@@ -1,13 +1,13 @@
 
 const mongoose = require("mongoose"); 
-const GridFsStorage = require('multer-gridfs-storage');
+const {GridFsStorage }= require('multer-gridfs-storage');
+
 const router = require('express').Router(); 
 const multer = require('multer'); 
 
 const crypto = require('crypto'); 
 const path = require('path');
-const { resolve } = require("path");
-const { rejects } = require("assert");
+
 
 require("dotenv").config();
 
@@ -17,7 +17,7 @@ const mongoURI = process.env.DB_URI;
 const conn = mongoose.createConnection(mongoURI, { 
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex:true,
+    useCreateIndex: true,
 });
 
 let gfs; 
@@ -27,26 +27,25 @@ conn.once('open', ()=> {
     }
 });
 
-const storage = new GridFsStorage({ 
-    url:mongoURI, 
-    options:{useUnifiedTopology:true},
-    file: (req,file)=> { 
-        return new Promise((resolve, reject)=> { 
-            crypto.randomBytes(16, (err, buf)=> { 
-                if(err) { 
-                    return reject(err); 
-
-                }
-                const filename = buf.toString('hex') + path.extname(file.originalname); 
-                const fileInfo = { 
-                    filename: filename,
-                    bucketName: 'images',
-                }; 
-                resolve(fileInfo)
-            });
+const storage = new GridFsStorage({
+    url: mongoURI,
+    options: { useUnifiedTopology: true },
+    file: (req, file) => {
+      return new Promise((resolve, reject) => {
+        crypto.randomBytes(16, (err, buf) => {
+          if (err) {
+            return reject(err);
+          }
+          const filename = buf.toString('hex') + path.extname(file.originalname);
+          const fileInfo = {
+            filename: filename,
+            bucketName: 'images',
+          };
+          resolve(fileInfo);
         });
+      });
     },
-});
+  });
 
 const store = multer({ 
     storage, 
@@ -81,7 +80,7 @@ const uploadMidleware = (req, res, next)=> {
     })
 }
 
-router.post('/upload/', uploadMidleware, async(req,res)=> { 
+router.post('/upload', uploadMidleware, async(req,res)=> { 
     const {file} = req; 
     const {id} = file; 
     if(file.size > 5000000) { 

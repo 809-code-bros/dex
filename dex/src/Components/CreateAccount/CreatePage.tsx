@@ -20,7 +20,6 @@ export const CreatePage = () => {
     email: "",
     username: "",
     password: "",
-    profile:"",
   });
 
   const navigate = useNavigate();

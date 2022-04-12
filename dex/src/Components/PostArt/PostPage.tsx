@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import "./PostPage.scss";
+import UploadSection from "./UploadSection";
 
 interface IUser {
   title?: string;
@@ -22,15 +23,15 @@ const PostPage = () => {
     });
   };
 
-  const artList = (e:any) => { 
-    e.preventDefault(); 
-    axios
-    .post("http://localhost:4000/", { 
-      createArt:createArt
-    })
-    .catch((err) => console.log(err));
+  // const artList = (e:any) => { 
+  //   e.preventDefault(); 
+  //   axios
+  //   .post("http://localhost:4000/", { 
+  //     createArt:createArt
+  //   })
+  //   .catch((err) => console.log(err));
 
-  }
+  // }
 
   
 
@@ -38,7 +39,7 @@ const PostPage = () => {
     <div className="PostPage-window d-flex">
       <div className="post-forms">
         <h1>Hello PrivateDrippy, upload art for others to see</h1>
-        <form onSubmit={artList}>
+        <form>
           <div className="imageTitle-sec">
             <label>Image Title</label>
             <input
@@ -56,20 +57,13 @@ const PostPage = () => {
               onChange={(e) => artUpdate({ desc: e.target.value })}
             ></textarea>
           </div>
-          <div className="uploadImage-sec">
-            <label>Upload Image</label>
-            <input
-              type="file"
-              id="image"
-              name="image"
-              required
-              value={createArt.img}
-              onChange={(e) => artUpdate({ img: e.target.value })}
-            />
+          <div className= "upload-section">
+            <UploadSection />
           </div>
-          <div className="submit-button">
+         
+          {/* <div className="submit-button">
             <button type="submit">Submit</button>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>
