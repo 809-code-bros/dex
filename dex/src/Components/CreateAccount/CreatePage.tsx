@@ -9,6 +9,8 @@ interface IUser {
   email?: string;
   username?: string;
   password?: string;
+  profile?: string;
+
 }
 
 export const CreatePage = () => {
@@ -18,6 +20,7 @@ export const CreatePage = () => {
     email: "",
     username: "",
     password: "",
+    profile:"",
   });
 
   const navigate = useNavigate();

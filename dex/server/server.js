@@ -4,13 +4,16 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const UsersModel = require("./models/user-model");
-require("dotenv/config");
+require("dotenv").config();
 
+const imageRoutes = require("./routes/image")
 
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
+
+app.use("/api/image", imageRoutes)
 
 // DB Connection
 mongoose
