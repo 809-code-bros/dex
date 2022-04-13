@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import "./UploadSection.scss";
-import LoadingDots from "../../Pictures/loading-dotsV2.gif";
+// import LoadingDots from "../../Pictures/loading-dotsV2.gif";
 const UploadSection = () => {
   const [file, setFile] = useState(null);
   const [inputContainsfile, setInputContainsFile] = useState(false);
