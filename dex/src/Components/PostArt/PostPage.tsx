@@ -58,7 +58,7 @@ const PostPage = () => {
             ></textarea>
           </div>
           <div className= "upload-section">
-            <UploadSection />
+            {/* <UploadSection />  */}
           </div>
          
           {/* <div className="submit-button">

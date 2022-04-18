@@ -2,18 +2,17 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const multer = require("multer");
 const cors = require("cors");
 const UsersModel = require("./models/user-model");
+const ImagesModel = require("./models/images-model");
 require("dotenv").config();
-
-const imageRoutes = require("./routes/image")
 
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/image", imageRoutes)
 
 // DB Connection
 mongoose
@@ -29,18 +28,14 @@ mongoose
     console.log(err);
   });
 
-
-if (process.env.NODE_ENV === 'production') {
-    // Serve any static files
-    app.use(express.static(path.join(__dirname, 'frontend/build')));
-    // Handle React routing, return all requests to React app
-    app.get('*', function(req, res) {
-        res.sendFile(path.join(__dirname, 'frontend/build', routesHandler));
-    });
+if (process.env.NODE_ENV === "production") {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, "frontend/build")));
+  // Handle React routing, return all requests to React app
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "frontend/build", routesHandler));
+  });
 }
-
-
-
 
 const PORT = process.env.PORT || 4000; // backend routing port
 app.listen(PORT, () => {
@@ -81,8 +76,36 @@ app.get("/user-profile", async (req, res) => {
   });
 });
 
+//image storage
 
+const Storage = multer.diskStorage({
 
+  filename: (req, file, cb) => {
+    cb(null, Date.now, file.originalname);
+  },
+});
 
+const upload = multer({
+  storage: Storage,
+}).single("testImage");
 
-
+app.post("/upload", (req, res) => {
+  upload(req, res, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      const newImage = new ImagesModel({
+        title: req.body.title,
+        desc:req.body.title,
+        image: {
+          data: req.file.filename,
+          contentType: "image/png, image/jpeg, image/gif ",
+        },
+      });
+      newImage
+        .save()
+        .then(() => res.send("sucessfully uploaded image"))
+        .catch((err) => console.log(err));
+    }
+  });
+});

@@ -1,12 +1,18 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 // ,bcrypt = require(bcrypt);
 
 const Schema = mongoose.Schema;
 
 const ImageSchema = new mongoose.Schema({
-  title: String,
-  desc: String,
-  img: {
+  title: {
+    type: String,
+    required: true,
+  },
+  desc:{ 
+    type:String,
+    required:true,
+  },
+  image: {
     data: Buffer,
     contentType: String,
   },
