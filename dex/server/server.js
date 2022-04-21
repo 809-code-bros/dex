@@ -96,7 +96,6 @@ app.post("/upload", (req, res) => {
     } else {
       const newImage = new ImagesModel({
         title: req.body.title,
-        desc:req.body.title,
         image: {
           data: req.file.filename,
           contentType: "image/png, image/jpeg, image/gif ",
