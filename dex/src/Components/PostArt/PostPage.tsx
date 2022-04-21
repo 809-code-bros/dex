@@ -41,7 +41,7 @@ const PostPage = () => {
         <h1>Hello PrivateDrippy, upload art for others to see</h1>
         <form>
           <div className="imageTitle-sec">
-            <label>Image Title</label>
+            <label>Title</label>
             <input
               type="text"
               placeholder="Image Name"
@@ -50,7 +50,7 @@ const PostPage = () => {
             />
           </div>
           <div className="imageDesc-sec">
-            <label>Image Description</label>
+            <label>Description</label>
             <textarea
               placeholder="Description"
               value={createArt.desc}

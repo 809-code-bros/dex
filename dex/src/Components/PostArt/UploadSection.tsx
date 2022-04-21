@@ -15,7 +15,9 @@ const UploadSection = () => {
       type="file"
       
       
-      /> 
+      />
+
+      
     </div>
   )
 }

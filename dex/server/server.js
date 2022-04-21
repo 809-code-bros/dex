@@ -13,7 +13,6 @@ require("dotenv").config();
 app.use(express.json());
 app.use(cors());
 
-
 // DB Connection
 mongoose
   .connect(process.env.DB_URI, {
@@ -79,9 +78,8 @@ app.get("/user-profile", async (req, res) => {
 //image storage
 
 const Storage = multer.diskStorage({
-
   filename: (req, file, cb) => {
-    cb(null, Date.now, file.originalname);
+    cb(null, file.originalname);
   },
 });
 
@@ -96,6 +94,7 @@ app.post("/upload", (req, res) => {
     } else {
       const newImage = new ImagesModel({
         title: req.body.title,
+        desc: req.body.desc,
         image: {
           data: req.file.filename,
           contentType: "image/png, image/jpeg, image/gif ",
