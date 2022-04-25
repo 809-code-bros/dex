@@ -1,18 +1,19 @@
 .PostPage-window {
   height: 1080px;
   width: 1920px;
-  background: linear-gradient(
-      0deg,
-      rgba(173, 173, 173, 0.2),
-      rgba(173, 173, 173, 0.2)
-    ),
-    linear-gradient(
-      90deg,
-      rgba(212, 211, 255, 0.744792) 36.04%,
-      rgba(130, 128, 239, 0.371864) 101.35%,
-      rgba(255, 255, 255, 0) 101.46%,
-      rgba(120, 118, 237, 0.401273) 101.46%
-    );
+  background: white;
+  // background: linear-gradient(
+  //     0deg,
+  //     rgba(173, 173, 173, 0.2),
+  //     rgba(173, 173, 173, 0.2)
+  //   ),
+  //   linear-gradient(
+  //     90deg,
+  //     rgba(212, 211, 255, 0.744792) 36.04%,
+  //     rgba(130, 128, 239, 0.371864) 101.35%,
+  //     rgba(255, 255, 255, 0) 101.46%,
+  //     rgba(120, 118, 237, 0.401273) 101.46%
+  //   );
 }
 
 .post-forms {
@@ -24,6 +25,7 @@
   h1 {
     height: 150px;
     width: 700px;
+    font-size: 35pxs;
     text-align: left;
   }
   label {
@@ -38,114 +40,56 @@
     width: 500px;
     height: 50px;
     padding: 5px;
-    
   }
-  textarea { 
+  textarea {
     width: 500px;
     height: 50px;
     padding: 10px;
-
   }
 }
 
-.upload-section{ 
+.choosefile-input { 
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+margin-top: 30px;
+}
+
+::-webkit-file-upload-button {
+  background: black;
+  color: white;
+  border-radius:15px;
+}
+
+.submit-button {
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 8px 16px;
+margin-left: 200px;
+margin-top: 100px;
+
+  button{ 
+    background: linear-gradient(160deg, #00B3DE 0%, rgba(0, 231, 245, 0) 100%), #8E1DFF;
+    color:white;
+    border-radius: 15px;
+  }
+}
+
+.blue-box {
+  position: absolute;
+  width: 517px;
+  height: 1008px;
+  left: 940px;
+  top: 74px;
+  background: #759cff;
+
+  
 }
 
 
-.submit-button { 
-  margin-top: 200px;
-  margin-left: 200px;
+.back-Icon { 
+  margin-right:480px;
+  font-size: 40px;
+  
 }
-
-// .PostPage-window {
-// width: 100vw;
-// height: 100vh;
-//   background: linear-gradient(
-//       0deg,
-//       rgba(173, 173, 173, 0.2),
-//       rgba(173, 173, 173, 0.2)
-//     ),
-//     linear-gradient(
-//       90deg,
-//       rgba(212, 211, 255, 0.744792) 36.04%,
-//       rgba(130, 128, 239, 0.371864) 101.35%,
-//       rgba(255, 255, 255, 0) 101.46%,
-//       rgba(120, 118, 237, 0.401273) 101.46%
-//     );
-// }
-
-// .userPost-text {
-
-//   margin-top: 120px;
-//   flex-direction: column;
-//   width: 500px;
-//   height: 160px;
-
-//   h1 {
-//     text-align: left;
-//     margin-left: 50px;
-//     font-family: "Roboto", sans-serif;
-//     font-weight: 700;
-//     font-size: 35px;
-//   }
-// }
-
-// .post-forms {
-//   display: flex;
-//   position: relative;
-//   top:300px;
-//   right:320px ;
-//   width:470px;
-//   height:234px;
-
-//   label  {
-//     font-family: "Roboto", sans-serif;
-//     font-weight: 700;
-//     line-height: 42.19px;
-//     font-size: 17px;
-
-//   }
-
-// }
-
-// .imageTitle-sec {
-//   display:flex;
-//   flex-direction: column;
-
-//   label {
-//     display: flex;
-//     flex-direction: start;
-//   }
-//   input {
-//     width: 500px;
-//     height: 50px;
-//   }
-
-// }
-
-// .imageDesc-sec {
-//   display:flex;
-//   flex-direction: column;
-
-//   label {
-//     display: flex;
-//     flex-direction: start;
-
-//   }
-//   input {
-//     width: 500px;
-//     height: 50px;
-//   }
-
-// }
-
-// .photo-insert {
-//   width: 500px;
-//   height: 465px;
-//   margin-top: 150px;
-//   background-color: white;
-//   margin-right: 100px;
-// }
-
-// .uploadImage-sec {
-// }
